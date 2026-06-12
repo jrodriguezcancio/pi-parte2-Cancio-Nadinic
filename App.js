@@ -6,6 +6,7 @@ import Registrar from "./src/screens/Registrar";
 import Login from "./src/screens/Login";
 import { Image, Text, View } from 'react-native';
 import HomePage from "./src/screens/HomePage";
+import HomeMenu from "./src/components/HomeMenu";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
     <Stack.Navigator>
       <Stack.Screen name="Login" component={Login}/>
       <Stack.Screen name="Registrar" component={Registrar}/>
-      <Stack.Screen name="HomePage" component={HomePage}/>
+      <Stack.Screen name="HomePage" component={HomeMenu}/>
     </Stack.Navigator>          
     </NavigationContainer>
   );

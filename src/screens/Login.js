@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Pressable, Text, View, TextInput } from "react-native";
 import {auth} from "../config/firebase";
 
+
 function Login(props) {
 
     const [email, setEmail] = useState("");
