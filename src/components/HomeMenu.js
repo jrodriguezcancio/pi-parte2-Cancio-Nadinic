@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator();
 function HomeMenu(){
     return(
         <Tab.Navigator>
-        <Tab.Screen name="CrearPost" component={CrearPost} />
+        <Tab.Screen name="CrearPost" component={CrearPost} options={{ headerShown: false }}/>
         </Tab.Navigator>
     )
 }
