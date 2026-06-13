@@ -53,7 +53,7 @@ function Camara(props) {
                 uri ? 
                 <View>
                    <Image style = {styles.preview}
-                   source={{uri: `data:image/png;base64,${uri}`}} />
+                   source={{uri: `data:image/jpeg;base64,${uri}`}} />
                    <View style={styles.buttonsContainer}>
                     <Pressable onPress={() => savePhoto()}>
                         <Text>Aceptar</Text>
