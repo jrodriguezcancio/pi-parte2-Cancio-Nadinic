@@ -52,17 +52,16 @@ container: {
         paddingTop: 10,
     },
 post: {
-    backgroundColor: '#FFFFFF', // Tarjeta blanca
-        borderRadius: 16, // Bordes bien redondeados y modernos
-        marginBottom: 20,
+    backgroundColor: '#FFFFFF',
+        borderRadius: 16,
         marginHorizontal: 16,
         padding: 16,
-        alignItems: 'center', // Centra el contenido dentro de la tarjeta
+        alignItems: 'center', 
 },
 tituloPost: {
         fontSize: 18,
-        fontWeight: '700', // Negrita tipográfica moderna
-        color: '#1E293B', // Azul oscuro casi negro (más elegante que negro puro)
+        fontWeight: '700', 
+        color: '#1E293B', 
         marginBottom: 6,
         textAlign: 'center'
     },
@@ -70,7 +69,6 @@ tituloPost: {
         fontSize: 14,
         color: '#64748B',
         lineHeight: 20,
-        // CLAVE 3: Centra el texto de la descripción
         textAlign: 'center', 
     }
 })
