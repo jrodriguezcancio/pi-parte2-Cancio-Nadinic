@@ -37,6 +37,7 @@ function HomePage() {
                 />
                             <Text style={styles.tituloPost}>{item.data.titulo}</Text>
                             <Text style={styles.descripcionPost}>{item.data.descripcion}</Text>
+                            <Text style={styles.descripcionPost}>Creado por: {item.data.owner}</Text>
                             <Post id={item.id} data={item.data} />
                         </View>
                     )}
