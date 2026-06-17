@@ -7,6 +7,7 @@ import Login from "./src/screens/Login";
 import { Image, Text, View } from 'react-native';
 import HomePage from "./src/screens/HomePage";
 import HomeMenu from "./src/components/HomeMenu";
+import Comentario from "./src/screens/Comentario";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
       <Stack.Screen name="Registrar" component={Registrar} options={{ headerShown: false }}/>
       <Stack.Screen name="HomePage" component={HomeMenu} options={{ headerShown: false }}/>
+      <Stack.Screen name="Comentario" component={Comentario} options={{ headerShown: false }}/>
     </Stack.Navigator>          
     </NavigationContainer>
   );

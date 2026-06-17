@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { db, auth} from "../config/firebase";
 import Post from "../components/Post";
 
-function HomePage() {
+function HomePage(props) {
 
     const [posts, setPost] = useState([]);
 
@@ -23,6 +23,10 @@ function HomePage() {
             }
         )
     }, []);
+    function comentarios() {
+        props.navigation.navigate("Comentario");
+    }
+
 
     return(
         <View style={styles.container}>
@@ -39,6 +43,10 @@ function HomePage() {
                             <Text style={styles.descripcionPost}>{item.data.descripcion}</Text>
                             <Text style={styles.descripcionPost}>Creado por: {item.data.owner}</Text>
                             <Post id={item.id} data={item.data} />
+                            <Pressable onPress={() => comentarios()}>
+                                <Text>Ver comentarios</Text>
+                            </Pressable>
+                
                         </View>
                     )}
                 />
