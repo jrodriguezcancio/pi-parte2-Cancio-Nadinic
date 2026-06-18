@@ -13,6 +13,7 @@ function HomeMenu(){
         <Tab.Screen name="CrearPost" component={CrearPost} options={{ headerShown: false }}/>
         <Tab.Screen name="HomePage" component={HomePage} options={{ headerShown: false }}/>
         <Tab.Screen name="MiPerfil" component={MiPerfil} options={{ headerShown: false }}/>
+        
         </Tab.Navigator>
     )
 }

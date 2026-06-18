@@ -23,9 +23,7 @@ function HomePage(props) {
             }
         )
     }, []);
-    function comentarios() {
-        props.navigation.navigate("Comentario");
-    }
+    
 
 
     return(
@@ -43,7 +41,9 @@ function HomePage(props) {
                             <Text style={styles.descripcionPost}>{item.data.descripcion}</Text>
                             <Text style={styles.descripcionPost}>Creado por: {item.data.owner}</Text>
                             <Post id={item.id} data={item.data} />
-                            <Pressable onPress={() => comentarios()}>
+                            <Pressable onPress={() => props.navigation.navigate("Comentario", { postId: item.id,
+                                post: item.data
+                             })}>
                                 <Text>Ver comentarios</Text>
                             </Pressable>
                 
@@ -55,31 +55,44 @@ function HomePage(props) {
     )
 }
 const styles = StyleSheet.create({
-container: {
+    container: {
         flex: 1,
-        backgroundColor: '#F5F7FA', // Fondo gris muy claro, resalta las tarjetas blancas
+        backgroundColor: "#F4F6F8",
         paddingTop: 10,
     },
-post: {
-    backgroundColor: '#FFFFFF',
-        borderRadius: 16,
-        marginHorizontal: 16,
-        padding: 16,
-        alignItems: 'center', 
-},
-tituloPost: {
-        fontSize: 18,
-        fontWeight: '700', 
-        color: '#1E293B', 
-        marginBottom: 6,
-        textAlign: 'center'
+
+    post: {
+        backgroundColor: "#FFFFFF",
+        marginHorizontal: 15,
+        marginBottom: 15,
+        padding: 15,
+        borderRadius: 15,
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+
+        elevation: 4,
     },
+
+    tituloPost: {
+        fontSize: 22,
+        fontWeight: "bold",
+        marginTop: 10,
+        marginBottom: 8,
+        color: "#222",
+    },
+
     descripcionPost: {
-        fontSize: 14,
-        color: '#64748B',
-        lineHeight: 20,
-        textAlign: 'center', 
-    }
-})
+        fontSize: 15,
+        color: "#555",
+        marginBottom: 6,
+        lineHeight: 22,
+    },
+});
 
 export default HomePage; 
