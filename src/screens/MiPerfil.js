@@ -26,7 +26,8 @@ function MiPerfil(props) {
 
     useEffect(() => {
         db.collection("posts")
-        .where("owner", "==", auth.currentUser.email)
+        .where("owner", "==", auth.currentUser.email).
+        orderBy('createdAt','desc')
         .onSnapshot((docs) => {
             let array = [];
             docs.forEach((doc) => {

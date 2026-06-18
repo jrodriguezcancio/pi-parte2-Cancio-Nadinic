@@ -29,6 +29,7 @@ function Comentario(props) {
    useEffect(() => {
     db.collection("comentarios")
         .where("postId", "==", props.route.params.postId)
+        .orderBy('createdAt', 'desc')
         .onSnapshot(
             docs => {
                 let comentarios = [];
