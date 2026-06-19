@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { StyleSheet, Pressable, Text, View, TextInput } from "react-native";
 import {auth} from "../config/firebase";
 
@@ -9,6 +9,16 @@ function Login(props) {
     const [password, setPassword] = useState("");
     const [login, setLogin] = useState(false);
     
+   useEffect(() => {
+        const rememberMe = auth.onAuthStateChanged((user) => {
+            if(user){
+                props.navigation.navigate("HomePage");
+            }
+        });
+
+        return rememberMe;
+    }, []);
+
     function onSubmit() {
        auth.signInWithEmailAndPassword(email, password)
        .then((response) => {
@@ -21,7 +31,7 @@ function Login(props) {
     }
     return(
         <View style={styles.container}>
-            
+            <Text style={styles.bien}>Bienvenidos</Text>
             <Text>Login</Text>
 
             <TextInput style={styles.input}
@@ -57,34 +67,43 @@ function Login(props) {
 const styles = StyleSheet.create({
 
     container: {
-        paddingHorizontal: 10,
-        marginTop: 20,
+        flex: 1,
+        justifyContent: "center",
+        paddingHorizontal: 25,
+        backgroundColor: "#F4F6F8",
+    },
+
+    bien: {
+        fontSize: 32,
+        fontWeight: "800",
+        color: "#2563EB",
+        textAlign: "center",
+        marginBottom: 10,
     },
 
     input: {
-        height: 20,
-        paddingVertical: 15,
-        paddingHorizontal: 10,
+        height: 50,
+        paddingHorizontal: 15,
         borderWidth: 1,
-        borderColor: '#ccc',
-        borderStyle: 'solid',
-        borderRadius: 6,
-        marginVertical: 10,
+        borderColor: "#D1D5DB",
+        borderRadius: 10,
+        backgroundColor: "#FFFFFF",
+        marginVertical: 8,
+        fontSize: 16,
     },
 
     boton: {
-      backgroundColor: '#28a745',
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    alignItems: 'center',
-    borderRadius: 4,
-    borderWidth: 1,
-    borderColor: '#28a745',
-    marginTop: 10,
+        backgroundColor: "#2563EB",
+        paddingVertical: 14,
+        borderRadius: 10,
+        alignItems: "center",
+        marginTop: 12,
     },
 
     textoBoton: {
-        color: '#fff',
+        color: "#FFFFFF",
+        fontSize: 16,
+        fontWeight: "600",
     },
 
 });

@@ -38,7 +38,7 @@ function CrearPost(props) {
                 :
                
             <View style={styles.container}>
-            <Text>Crear Post</Text>
+            <Text style={styles.titulo}>Crear Post</Text>
             <TextInput style={styles.input}
                 placeholder="Título"
                 onChangeText={text => setTitulo(text)}
@@ -63,26 +63,44 @@ function CrearPost(props) {
 const styles = StyleSheet.create({
 
     container: {
-        paddingHorizontal: 10,
-        marginTop: 20,
         flex: 1,
+        justifyContent: "center",
+        paddingHorizontal: 25,
+        backgroundColor: "#F4F6F8",
     },
-    input: {    
+
+    titulo: {
+        fontSize: 32,
+        fontWeight: "800",
+        color: "#2563EB",
+        textAlign: "center",
+        marginBottom: 25,
+    },
+
+    input: {
+        height: 50,
+        paddingHorizontal: 15,
         borderWidth: 1,
-        borderColor: "#ccc",
-        padding: 10,
-        marginBottom: 10,
-        borderRadius: 5,
+        borderColor: "#D1D5DB",
+        borderRadius: 10,
+        backgroundColor: "#FFFFFF",
+        marginVertical: 8,
+        fontSize: 16,
     },
+
     boton: {
-        backgroundColor: "#007BFF",
-        padding: 10,
-        borderRadius: 5,
+        backgroundColor: "#2563EB",
+        paddingVertical: 14,
+        borderRadius: 10,
         alignItems: "center",
+        marginTop: 12,
     },
+
     textoBoton: {
-        color: "#fff",
-        fontWeight: "bold",
+        color: "#FFFFFF",
+        fontSize: 16,
+        fontWeight: "600",
     },
+
 });
 export default CrearPost

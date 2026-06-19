@@ -67,7 +67,6 @@ function Camara(props) {
                 :
 
                 <>
-                    <Text>Soy la camara</Text>
                  <CameraView 
                  style={styles.camara}
                  facing='back'
@@ -88,33 +87,53 @@ function Camara(props) {
         )
 }
 
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center",
-        },
-        camara: {
-            width: 800,
-            height: 300,
-        },
-        shootButton: {
-            backgroundColor: "#ccc",
-            textAlign: "center",
-            padding: 10,
-            borderRadius: 5,
-        },
-        preview: {
-            width: 200,
-            height: 200,
-        },
-        buttonsContainer: {
-            flexDirection: "row",
-            justifyContent: "space-between",
-            width: 200,
-        }
-        
-    })
+   const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#f5f5f5",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 20,
+    },
+
+    camara: {
+        width: "95%",
+        height: 400,
+        borderRadius: 15,
+        overflow: "hidden",
+        marginVertical: 20,
+    },
+
+    shootButton: {
+        backgroundColor: "#28a745",
+        paddingHorizontal: 25,
+        paddingVertical: 12,
+        borderRadius: 10,
+        marginTop: 15,
+        elevation: 3,
+    },
+
+    preview: {
+        width: 250,
+        height: 250,
+        borderRadius: 15,
+        marginBottom: 20,
+        borderWidth: 2,
+        borderColor: "#ddd",
+    },
+
+    buttonsContainer: {
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        width: 250,
+        marginTop: 10,
+        paddingVertical: 10,
+        backgroundColor: "#fff",
+        borderRadius: 10,
+        elevation: 2,
+    }
+});
 
 export default Camara;
 

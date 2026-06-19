@@ -28,6 +28,9 @@ function HomePage(props) {
 
     return(
         <View style={styles.container}>
+            <Text style={styles.PostHecho}>
+                Posts hechos 
+            </Text>
                 <FlatList
                     data={posts}
                     keyExtractor={item => item.id.toString()}
@@ -58,41 +61,55 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#F4F6F8",
-        paddingTop: 10,
+        paddingTop: 15,
     },
 
     post: {
         backgroundColor: "#FFFFFF",
         marginHorizontal: 15,
-        marginBottom: 15,
-        padding: 15,
-        borderRadius: 15,
-
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.1,
-        shadowRadius: 4,
-
-        elevation: 4,
+        marginBottom: 20,
+        padding: 18,
+        borderRadius: 18,
+        borderWidth: 1,
+        borderColor: "#E5E7EB",
     },
 
     tituloPost: {
         fontSize: 22,
-        fontWeight: "bold",
-        marginTop: 10,
-        marginBottom: 8,
-        color: "#222",
+        fontWeight: "700",
+        marginTop: 12,
+        marginBottom: 10,
+        color: "#1F2937",
     },
 
     descripcionPost: {
         fontSize: 15,
-        color: "#555",
-        marginBottom: 6,
+        color: "#6B7280",
+        marginBottom: 8,
         lineHeight: 22,
     },
+
+    owner: {
+        fontSize: 13,
+        color: "#9CA3AF",
+        marginTop: 5,
+    },
+
+    boton: {
+        backgroundColor: "#2563EB",
+        color: "#fff",
+        padding: 10,
+        borderRadius: 8,
+        textAlign: "center",
+        marginTop: 10,
+    },
+    PostHecho:{
+fontSize: 30,
+    fontWeight: "800",
+    color: "#2563EB",
+    textAlign: "center",
+    marginVertical: 15,
+    }
 });
 
 export default HomePage; 
