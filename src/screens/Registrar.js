@@ -37,7 +37,16 @@ if(usuario === ""){
             })
             })
         .catch((error) => {
-        alert("Error al registrar usuario");
+        if(error.message.includes("already in use")){
+            alert("Ese email ya está registrado");
+        }
+        else if(error.message.includes("badly formatted")){
+            alert("El email tiene un formato inválido");
+        }
+        else{
+            alert(error.message);
+        }
+
         })
     }
 
